@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F06E7C2-BE4A-4AF6-AB41-336E7498C465}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MFDlib</RootNamespace>
+    <AssemblyName>MFDlib</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NamedPipeWrapper, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NamedPipeWrapper.1.5.0\lib\net40\NamedPipeWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>..\packages\SharpDX.2.6.3\Bin\DirectX11-Signed-net40\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DirectInput">
+      <HintPath>..\packages\SharpDX.2.6.3\Bin\DirectX11-Signed-net40\SharpDX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="vjMapper">
+      <HintPath>..\ExtLibraries\vjMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dxInput\DevJoystick.cs" />
+    <Compile Include="dxInput\DevJoystickButtonEventArgs.cs" />
+    <Compile Include="dxInput\dxSupport.cs" />
+    <Compile Include="IUC_MFD.cs" />
+    <Compile Include="MfdImplementation\MFDimplBase.cs" />
+    <Compile Include="MfdInstance.cs" />
+    <Compile Include="MfdPanel\IMfdSupport.cs" />
+    <Compile Include="OwnerSupport\MfdQueue.cs" />
+    <Compile Include="OwnerSupport\Support.cs" />
+    <Compile Include="Commands\ConfigFile.cs" />
+    <Compile Include="Drawing\DisplayItem.cs" />
+    <Compile Include="Drawing\DisplayList.cs" />
+    <Compile Include="Drawing\GProc.cs" />
+    <Compile Include="Drawing\IDrawing.cs" />
+    <Compile Include="Drawing\RectItem.cs" />
+    <Compile Include="Drawing\TextItem.cs" />
+    <Compile Include="LocalExtensions.cs" />
+    <Compile Include="MfdPanel\MfdBase.cs" />
+    <Compile Include="MfdPanel\MfdGeo.cs" />
+    <Compile Include="MfdPanel\MfdLabels.cs" />
+    <Compile Include="MfdImplementation\MFDtest.cs" />
+    <Compile Include="MfdPanel\MfdPanelConfig.cs" />
+    <Compile Include="MfdPanel\MfdPanelSupport.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Protocol\UdpMessenger.cs" />
+    <Compile Include="UC_MFDEventArgs.cs" />
+    <Compile Include="UC_MFDtest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_MFDtest.Designer.cs">
+      <DependentUpon>UC_MFDtest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_MFDtest.resx">
+      <DependentUpon>UC_MFDtest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="backg_notdefined.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

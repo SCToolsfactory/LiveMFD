@@ -1,0 +1,47 @@
+{
+          "_Comment" : "Cougar MFD Panel Test Config File Flight",
+          "MapName" : "Flight",
+          "BackgroundImage":  "MFDflightBackg.png",
+          "Macros" : [
+            { "MName": "_FullPwr", "CmdList": [ { "S": {"Index": 1, "Value": 1000 }}, { "S": {"Index": 2, "Value": 1000 }} ] },
+            { "MName": "_Cruise",  "CmdList": [ { "S": {"Index": 1, "Value":  500 }}, { "S": {"Index": 2, "Value":  500 }} ] },
+            { "MName": "_Hover",   "CmdList": [ { "S": {"Index": 1, "Value":    0 }}, { "S": {"Index": 2, "Value": 1000 }} ] },
+            { "MName": "_Fight",   "CmdList": [ { "S": {"Index": 1, "Value":  500 }}, { "S": {"Index": 2, "Value": 1000 }} ] },
+            { "MName": "_Idle",    "CmdList": [ { "S": {"Index": 1, "Value":    0 }}, { "S": {"Index": 2, "Value":    0 }} ] }
+          ],
+          "SwitchMap": [
+              { "Input": "BT1",  "Cmd" : [{ "M": {"Macro": "_FullPwr" }}] },
+              { "Input": "BT2",  "Cmd" : [{ "M": {"Macro": "_Fight" }}] },
+              { "Input": "BT3",  "Cmd" : [{ "M": {"Macro": "_Cruise" }}] },
+              { "Input": "BT4",  "Cmd" : [{ "M": {"Macro": "_Hover" }}] },
+              { "Input": "BT5",  "Cmd" : [{ "M": {"Macro": "_Idle" }}] },
+              { "Input": "BT6",  "Cmd" : [{ "K": {"VKcodeEx": "VK_B", "Mode": "t", "Modifier": ""}}]  },
+              { "Input": "BT7",  "Cmd" : [{ "K": {"VKcodeEx": "VK_B", "Mode": "t", "Modifier": "lc"}}]  },
+              { "Input": "BT8",  "Cmd" : [{ "K": {"VKcodeEx": "VK_J", "Mode": "t", "Modifier": ""}}]  },
+              { "Input": "BT9",  "Cmd" : [{ "B": {"Index": 9 }}]  },
+              { "Input": "BT10", "Cmd" : [{ "B": {"Index": 10 }}]  },
+              { "Input": "BT11", "Cmd" : [{ "K": {"VKcodeEx": "VK_S", "Mode": "t", "Modifier": "la"}}]  },
+              { "Input": "BT12", "Cmd" : [{ "K": {"VKcodeEx": "VK_A", "Mode": "t", "Modifier": "la"}}]  },
+              { "Input": "BT13", "Cmd" : [{ "K": {"VKcodeEx": "VK_E", "Mode": "t", "Modifier": "la"}}]  },
+              { "Input": "BT14", "Cmd" : [{ "K": {"VKcodeEx": "VK_G", "Mode": "t", "Modifier": "la"}}]  },
+              { "Input": "BT15", "Cmd" : [{ "K": {"VKcodeEx": "VK_T", "Mode": "t", "Modifier": "la"}}]  },
+              { "Input": "BT16", "Cmd" : [{ "B": {"Index": 16 }}]  },
+              { "Input": "BT17", "Cmd" : [{ "K": {"VKcodeEx": "VK_1", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT18", "Cmd" : [{ "K": {"VKcodeEx": "VK_2", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT19", "Cmd" : [{ "K": {"VKcodeEx": "VK_3", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT20", "Cmd" : [{ "K": {"VKcodeEx": "VK_4", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT21", "Cmd" : [{ "E": {"Ext3": "NextMFD" }}]  },
+              { "Input": "BT22", "Cmd" : [{ "E": {"Ext3": "PrevMFD" }}]  },
+              { "Input": "BT23", "Cmd" : [{ "B": {"Index": 23 }}]  },
+              { "Input": "BT24", "Cmd" : [{ "B": {"Index": 24 }}]  },
+              { "Input": "BT25", "Cmd" : [{ "K": {"VKcodeEx": "VK_NP_7", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT26", "Cmd" : [{ "K": {"VKcodeEx": "VK_NP_0", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT27", "Cmd" : [{ "K": {"VKcodeEx": "VK_NP_4", "Mode": "t", "Modifier": "rc"}}]  },
+              { "Input": "BT28", "Cmd" : [{ "K": {"VKcodeEx": "VK_NP_1", "Mode": "t", "Modifier": "rc"}}]  }
+            ],
+          "ButtonLabels": [
+              "FULL", "FIGHT", "CRUISE", "HOVER", "IDLE",  "Q-SYSTEM", "Q-ENGAGE", "VTOL", "BTN09", "BTN10",
+              "SPEED LIM", "CRUISE CTL", "E.S.P.", "G-FORCE", "LIGHTS",  "BTN16", "P.SHIELDS", "P.ENGINE", "P.WEAPONS", "P.RESET",
+              "MFD SW", "MFD SW",   "SW 23", "",   "PWR 1/0", "",   "PWR +-", ""
+            ]
+        }
